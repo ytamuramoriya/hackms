@@ -4,7 +4,9 @@
 namespace App\Services;
 
 
+use App\Http\Resources\DespesaResource;
 use App\Models\Despesa;
+use App\QueryFilters\DespesasFilters;
 use GuzzleHttp\Client;
 
 class DespesasService
@@ -48,6 +50,21 @@ class DespesasService
             return $objeto;
         }
         return null;
+    }
+
+    /**
+     * @param $filtros
+     * @return mixed
+     */
+    public function listar(DespesasFilters $filtros)
+    {
+        $despesas = Despesa::filterBy($filtros)->get();
+
+        if($despesas->count() > 0)
+        {
+            return DespesaResource::collection($despesas);
+        }
+        return response()->json('Nenhum registro foi encontrado', 404);
     }
 
 }

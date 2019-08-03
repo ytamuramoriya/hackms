@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\QueryFilters\ReceitasFilters;
 use App\Services\ReceitasService;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,15 @@ class ReceitaController extends Controller
     public function __construct()
     {
         $this->receitasService = new ReceitasService();
+    }
+
+    /**
+     * @param ReceitasFilters $filters
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function index(ReceitasFilters $filters)
+    {
+        return $this->receitasService->listar($filters);
     }
 
     /**

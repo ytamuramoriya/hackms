@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Cerbero\QueryFilters\FiltersRecords;
 use Illuminate\Database\Eloquent\Model;
 
 class Receita extends Model
 {
+
+    use FiltersRecords;
 
     /**
      * @var array

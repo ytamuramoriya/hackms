@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\QueryFilters\DespesasFilters;
 use App\Services\DespesasService;
 use Illuminate\Http\Request;
 
 class DespesaController extends Controller
 {
 
+    /**
+     * @var DespesasService $despesasService
+     */
     protected $despesasService;
 
     /**
@@ -18,7 +22,15 @@ class DespesaController extends Controller
         $this->despesasService = new DespesasService();
     }
 
+    public function index(DespesasFilters $filters)
+    {
+        return $this->despesasService->listar($filters);
+    }
 
+    /**
+     * @param Request $request
+     * @return |null
+     */
     public function importar(Request $request)
     {
         $params = $request->only(['dataInicio', 'dataTermino', 'exercicio']);
