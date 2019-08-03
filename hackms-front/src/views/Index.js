@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
+import MainContainer from "../components/MainContainer";
 
 class Index extends Component {
+  static navigationOptions = {
+    header: null,
+  };
   render() {
     return (
-      <div>
+      <MainContainer>
         
-      </div>
+      </MainContainer>
     );
   }
 }

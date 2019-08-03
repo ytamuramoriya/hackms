@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 21295,
-  "expoServerNgrokUrl": "https://va-b6u.anonymous.hackms-front.exp.direct",
-  "packagerNgrokUrl": "https://packager.va-b6u.anonymous.hackms-front.exp.direct",
-  "ngrokPid": 21320,
+  "packagerPort": 19003,
+  "packagerPid": 24114,
+  "expoServerNgrokUrl": "https://9e-fbn.anonymous.hackms-front.exp.direct",
+  "packagerNgrokUrl": "https://packager.9e-fbn.anonymous.hackms-front.exp.direct",
+  "ngrokPid": 24001,
   "webpackServerPort": null
 }

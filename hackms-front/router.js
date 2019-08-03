@@ -1,10 +1,11 @@
 import {createAppContainer, createStackNavigator} from "react-navigation";
-import Page1 from "./src/views/home";
+import Index from "./src/views/Index";
 import Page2 from "./src/views/about";
+import MainContainer from "./src/components/MainContainer";
 
 export const Routes = createAppContainer(
   createStackNavigator({
-    Home: Page1,
+    Home: Index,
     About: Page2,
   })
 );
