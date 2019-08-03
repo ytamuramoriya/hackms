@@ -1,13 +1,34 @@
-import Page1 from './components/home';
-import Page2 from './components/about';
+import React from 'react';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
+import {Routes} from './router';
 
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import GlobalState from "./src/context/GlobalState";
 
-const Routes = createAppContainer(
-    createStackNavigator({
-      Home: Page1,
-      About: Page2,
-    })
-);
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isReady: false,
+    };
+  }
+  async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      ...Ionicons.font,
+    });
+    this.setState({ isReady: true });
+  }
 
-export default Routes;
+  render() {
+    if (!this.state.isReady) {
+      return <AppLoading />;
+    }
+
+    return (<GlobalState>
+      <Routes/>
+    </GlobalState>);
+  }
+}
