@@ -15,11 +15,15 @@ class CreateReceitasTable extends Migration
     {
         Schema::create('receitas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('fonte_recurso');
+
+            $table->bigInteger('fonte_recurso_id')->unsigned();
+            $table->foreign('fonte_recurso_id')->references('id')->on('fonte_recursos');
+
             $table->decimal('valor_previsto', 15, 2);
             $table->decimal('valor_arrecadado', 15, 2);
             $table->integer('mes');
             $table->integer('ano');
+
             $table->timestamps();
         });
     }

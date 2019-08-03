@@ -2,27 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Receita;
+use App\Services\ReceitasService;
 use Illuminate\Http\Request;
 
 class ReceitaController extends Controller
 {
+
+    /**
+     * @var ReceitasService $receitasService
+     */
+    private $receitasService;
+
+    /**
+     * ReceitaController constructor.
+     * @param $receitasService
+     */
+    public function __construct()
+    {
+        $this->receitasService = new ReceitasService();
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
     {
         //
     }
@@ -35,7 +40,7 @@ class ReceitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->receitasService->importar($request);
     }
 
     /**
@@ -45,17 +50,6 @@ class ReceitaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Receita $receita)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Receita  $receita
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Receita $receita)
     {
         //
     }
