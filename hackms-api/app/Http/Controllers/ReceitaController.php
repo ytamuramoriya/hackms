@@ -23,57 +23,12 @@ class ReceitaController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return bool
      */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function importar(Request $request)
     {
         return $this->receitasService->importar($request);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Receita  $receita
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Receita $receita)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Receita  $receita
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Receita $receita)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Receita  $receita
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Receita $receita)
-    {
-        //
-    }
 }
