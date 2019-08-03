@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FonteRecurso;
 use App\QueryFilters\ReceitasFilters;
 use App\Services\ReceitasService;
 use Illuminate\Http\Request;
@@ -39,6 +40,14 @@ class ReceitaController extends Controller
     public function importar(Request $request)
     {
         return $this->receitasService->importar($request);
+    }
+
+    /**
+     * @return FonteRecurso[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function fontes_recursos()
+    {
+        return FonteRecurso::all();
     }
 
 }

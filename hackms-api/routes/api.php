@@ -22,8 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('v1')->group(function () {
 
+    Route::get('receitas/fontes-recursos', 'ReceitaController@fontes_recursos');
     Route::post('receitas/importar', 'ReceitaController@importar');
     Route::get('receitas', 'ReceitaController@index');
+
 
     Route::post('despesas/importar', 'DespesaController@importar');
     Route::get('despesas', 'DespesaController@index');

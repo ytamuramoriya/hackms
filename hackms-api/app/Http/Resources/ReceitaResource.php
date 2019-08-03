@@ -20,7 +20,8 @@ class ReceitaResource extends JsonResource
             'valor_previsto' => $this->valor_previsto,
             'valor_arrecadado' => $this->valor_arrecadado,
             'mes' => $this->mes,
-            'ano' => $this->ano
+            'ano' => $this->ano,
+            'fonte_recurso' => $this->fonte_recurso
         ];
     }
 }
