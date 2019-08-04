@@ -5,11 +5,11 @@ import {View, StyleSheet} from "react-native";
 const CardList = ({item}) => {
   return (
     <View style={[style.cardContainer,{ backgroundColor: item.color}]}>
-      <Text style={{color: 'white', opacity: .7, fontSize: 18}}>{item.title}</Text>
-      <H3 style={{color: 'white'}}>
+      <Text style={{color: 'white', opacity: .7, fontSize: 18, fontWeight: '500'}}>{item.title}</Text>
+      <H3 style={{color: 'white', fontWeight: '600'}}>
         R$ {item.value}
       </H3>
-      <Text style={{marginTop: 10, fontWeight: '500', opacity: .4}}>Ver Dados</Text>
+      <Text style={{marginTop: 10, fontWeight: '600', opacity: .4}}>Ver Dados</Text>
   </View>
   );
 };
